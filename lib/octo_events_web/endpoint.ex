@@ -7,7 +7,7 @@ defmodule OctoEventsWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_octo_events_key",
-    signing_salt: "+lpMzp6f"
+    signing_salt: "Qqd6fLWO"
   ]
 
   socket "/socket", OctoEventsWeb.UserSocket,
