@@ -7,6 +7,7 @@ defmodule OctoEventsWeb.Router do
 
   scope "/api", OctoEventsWeb do
     pipe_through :api
+    resources "/events", EventsController, only: [:create]
   end
 
   # Enables LiveDashboard only for development
@@ -22,6 +23,8 @@ defmodule OctoEventsWeb.Router do
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
       live_dashboard "/dashboard", metrics: OctoEventsWeb.Telemetry
+
+
     end
   end
 end
