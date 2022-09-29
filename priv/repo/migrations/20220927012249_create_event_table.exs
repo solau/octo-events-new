@@ -3,9 +3,11 @@ defmodule OctoEvents.Repo.Migrations.CreateEventTable do
 
   def change do
     create table(:events) do
-      add :action, :string
-      add :number, :integer
-      add :created_at, :string
+      add :action, :string, null: false
+      add :number, :integer, null: false
+      add :created_at, :string, null: false
     end
+
+    create index(:events, [:number])
   end
 end

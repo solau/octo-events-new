@@ -11,7 +11,7 @@ defmodule OctoEventsWeb.EventsController do
 
     defp handle_response({:ok, event}, conn) do
         conn
-        |> put_status(:ok)
+        |> put_status(:created-)
         |> render("create.json", event: event)
     end
 
