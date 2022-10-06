@@ -18,9 +18,8 @@ defmodule OctoEvents.Event.Get do
     end
 
     defp fetch_events(number) do
-        "events"
-        |> where([e], e.number == ^number)
-        |> select([:number, :action, :created_at])
+        Event
+        |> where(number: ^number)
         |> order_by(desc: :created_at)
         |> Repo.all()
       end
