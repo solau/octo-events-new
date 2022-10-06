@@ -7,7 +7,8 @@ defmodule OctoEventsWeb.Router do
 
   scope "/api", OctoEventsWeb do
     pipe_through :api
-    resources "/events", EventsController, only: [:create]
+    resources "/events", EventController, only: [:create]
+    resources "/issues/:number/events", EventController, [:index]
   end
 
   # Enables LiveDashboard only for development
