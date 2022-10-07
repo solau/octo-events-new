@@ -4,7 +4,7 @@ defmodule OctoEvents.Event.Get do
     import Ecto.Query
 
     def call(number) do
-        case Integer.parse(number,10) do
+        case Integer.parse(number) do
           :error -> {:error, "'#{number}' is not a number"}
           {n, _} -> get(n)
         end
