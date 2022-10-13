@@ -1,5 +1,5 @@
 defmodule OctoEvents.Event.Get do
-    alias OctoEvents.{Repo}
+    alias OctoEvents.{Event, Repo}
 
     import Ecto.Query
 
